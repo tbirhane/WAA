@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>403 error</title>
+
+</head>
+<body>
+
+<img th:src= "@{/image/error_page.jpg}" htmlEscape="true"  alt="Page not found  JSP!!!"  />
+
+<H2 th:text="${requestScope['javax.servlet.error.message']}">  </H2>
+
+<p><button th:type=button onclick=window.location.href="${/employee_input}" />">Home</button></p>
+
+</center>
+
+</body>
+</html>

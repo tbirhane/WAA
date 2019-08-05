@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Employee Form</title>
+    <link rel="stylesheet" th:href="@{css/main.css}" type="text/css">
+</head>
+<body>
+
+<div id="global">
+    <form action="" th:action="@{employee_save}" th:object="${employee}" method="post">
+        <fieldset>
+            <legend>Add an employee</legend>
+            <p>
+<!--                <form th:err path="*" cssStyle="color : red;" />-->
+            <ul th:if="${#fields.hasErrors('*')}">
+                <li th:each="err : ${#fields.errors('*')}" th:text="${err}" >Input
+                    is incorrect</li>
+            </ul>
+            </p>
+            <p>
+            <label for="firstName">
+                <span th:text="#{employee.form.firstName}">First</span>
+            </label>
+            <input th:type="text" id="firstName" th:field="*{firstName}"/>
+
+            <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="errors"> Incorrect </p>
+
+            </p>
+            <p>
+            <label for="lastName">
+                <span th:text="#{employee.form.lastName}">last</span>
+            </label>
+            <input th:type="text" id="lastName" th:field="*{lastName}"/>
+            </p>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="errors"> Incorrect </p>
+            </p>
+            <p>
+            <label for="birthDate">
+                <span th:text="#{employee.form.birthDate}">birthDate</span>
+            </label>
+            <input th:type="text" id="birthDate" th:field="*{birthDate}"/>
+
+            <p th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <p>
+                <label for="id">
+                    <span th:text="#{employee.form.id}">Id</span>
+                </label>
+                <input th:type="text" id="id" th:field="*{id}"/>
+
+            <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <p>
+                <label for="salaryLevel">
+                    <span th:text="#{employee.form.salaryLevel}">salary</span>
+                </label>
+                <input th:type="text" id="salaryLevel" th:field="*{salaryLevel}"/>
+
+            <p th:if="${#fields.hasErrors('salaryLevel')}" th:errors="*{salaryLevel}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <h4>Address:</h4>
+
+            <p>
+                <label for="street">
+                    <span th:text="#{employee.form.address.street}">salary</span>
+                </label>
+                <input th:type="text" id="street" th:field="*{address.street}"/>
+
+            <p th:if="${#fields.hasErrors('address.street')}" th:errors="*{address.street}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <p>
+                <label for="state">
+                    <span th:text="#{employee.form.address.state}">salary</span>
+                </label>
+                <input th:type="text" id="state" th:field="*{address.state}"/>
+
+            <p th:if="${#fields.hasErrors('address.state')}" th:errors="*{address.state}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <p>
+                <label for="zipCode">
+                    <span th:text="#{employee.form.address.zipCode}">salary</span>
+                </label>
+                <input th:type="text" id="zipCode" th:field="*{address.zipCode}"/>
+
+            <p th:if="${#fields.hasErrors('address.zipCode')}" th:errors="*{address.zipCode}" th:errorclass="errors"> Incorrect </p>
+            </p>
+
+            <p id="buttons">
+                <input id="reset" type="reset" tabindex="4">
+                <input id="submit" type="submit" tabindex="5"
+                       value="Add Employee">
+            </p>
+
+        </fieldset>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>File Not Found</title>
+</head>
+<body>
+
+<center>
+
+    <img th:src="${/image/error_page.jpg}" htmlEscape="true"  alt="Page not found  JSP!!!"  />
+
+    <h1 th:text="${fileNotFound}" class="alert alert-danger"> </h1>
+    <%-- <H2>${requestScope['javax.servlet.error.message']}</H2> --%>
+
+    <p th:text="${url}"></p>
+    <p th:text="${exception}"></p>
+
+    <p><button type=button onclick=window.location.href="@{/welcome}"> Home</button></p>
+
+</center>
+</body>
+</html>
