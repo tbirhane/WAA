@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Employee Form</title>
+</head>
+<body>
+<p>
+    Details:
+<ul th:each="emp: ${employee}">
+    <li th:text="*{emp.firstName}"> </li>
+    <li th:text="*{emp.lastName}"> </li>
+    <li th:text="*{emp.email}"> </li>
+    <li th:text="*{emp.address.street}"> </li>
+</ul>
+<p>
+
+</p>
+</p>
+</body>
+</html>
